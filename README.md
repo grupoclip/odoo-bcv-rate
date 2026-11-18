@@ -100,7 +100,7 @@ Otras formas de usar los mismos datos / other ways to use the same data:
 
 - **Todas las integraciones / All integrations:** <https://bcv.today/integraciones/>
   (English: <https://bcv.today/en/integrations/>)
-- **Librería Python / Python library** `bcv` (`pip install bcv`, CLI `bcv`):
+- **Biblioteca de Python / Python library** `bcv` (`pip install bcv`, CLI `bcv`):
   <https://pypi.org/project/bcv/>
 - **Servidor MCP / MCP server** for AI assistants (Streamable HTTP, no auth):
   `https://mcp.bcv.today/mcp`, setup at <https://bcv.today/en/api/#mcp-server>

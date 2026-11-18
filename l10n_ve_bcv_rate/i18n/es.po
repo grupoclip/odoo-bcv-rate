@@ -188,7 +188,7 @@ msgstr "Diaria"
 msgid ""
 "Dates before %(date)s are loaded one day at a time; choose a range with at "
 "most %(count)s such days."
-msgstr "Las fechas anteriores al %(date)s se cargan día por día; elija un rango con máximo %(count)s de esos días."
+msgstr "Las fechas anteriores al %(date)s se cargan día por día; elige un rango con %(count)s de esos días como máximo."
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__display_name
@@ -250,14 +250,14 @@ msgid ""
 "Leave empty to update every active currency published by the BCV (USD, EUR, "
 "CNY, TRY, RUB, and the bolivar when the company currency is not the "
 "bolivar)."
-msgstr "Déjelo vacío para actualizar todas las monedas activas que publica el BCV (USD, EUR, CNY, TRY, RUB, y el bolívar cuando la moneda de la compañía no es el bolívar)."
+msgstr "Déjalo vacío para actualizar todas las monedas activas que publica el BCV (USD, EUR, CNY, TRY y RUB, más el bolívar cuando la moneda de la compañía no es el bolívar)."
 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
 #, python-format
 msgid "Load at most %(days)s days at a time."
-msgstr "Cargue como máximo %(days)s días a la vez."
+msgstr "Carga como máximo %(days)s días a la vez."
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.actions.act_window,name:l10n_ve_bcv_rate.action_bcv_rate_backfill
@@ -293,7 +293,7 @@ msgstr "Próxima actualización BCV"
 msgid ""
 "No active currency to update: activate VES, USD, EUR, CNY, TRY or RUB in the"
 " currencies list."
-msgstr "No hay monedas activas para actualizar: active VES, USD, EUR, CNY, TRY o RUB en la lista de monedas."
+msgstr "No hay monedas activas para actualizar: activa VES, USD, EUR, CNY, TRY o RUB en la lista de monedas."
 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
@@ -389,4 +389,4 @@ msgstr "Semanal"
 msgid ""
 "Weekly/monthly intervals only: first day on which the scheduled action "
 "updates the rates again. Empty means on its next run."
-msgstr "Solo para frecuencia semanal o mensual: primer día en que la acción planificada vuelve a actualizar las tasas. Vacío significa en su próxima ejecución."
+msgstr "Solo para frecuencia semanal o mensual: primer día en que la acción programada vuelve a actualizar las tasas. Si está vacío, se actualizan en su próxima ejecución."
