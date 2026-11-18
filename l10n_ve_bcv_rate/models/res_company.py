@@ -67,9 +67,18 @@ class ResCompany(models.Model):
     bcv_last_status = fields.Char(string="Last BCV result", readonly=True, copy=False)
 
     def write(self, vals):
-        if "bcv_auto_update" in vals or "bcv_interval" in vals:
-            vals = dict(vals, bcv_next_update=False)
-        return super().write(vals)
+        # A new schedule starts on the next cron run; saving the settings
+        # again with the same values does not reset it.
+        rescheduled = self.filtered(
+            lambda c: any(
+                key in vals and c[key] != vals[key]
+                for key in ("bcv_auto_update", "bcv_interval")
+            )
+        )
+        res = super().write(vals)
+        if rescheduled and "bcv_next_update" not in vals:
+            super(ResCompany, rescheduled).write({"bcv_next_update": False})
+        return res
 
     # ------------------------------------------------------------------
     # Currency selection
