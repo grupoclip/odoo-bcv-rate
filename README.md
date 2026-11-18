@@ -4,13 +4,17 @@ Odoo module **`l10n_ve_bcv_rate`**: keeps each company's currency rates updated 
 official **Banco Central de Venezuela** rate (USD, EUR, CNY, TRY, RUB) from the free
 [BCV Today API](https://bcv.today). No API key, no extra Python packages.
 
+**Instalar desde la tienda de Odoo / Install from the Odoo Apps Store (free):**
+[apps.odoo.com/apps/modules/17.0/l10n_ve_bcv_rate](https://apps.odoo.com/apps/modules/17.0/l10n_ve_bcv_rate)
+
+
 | Branch | Odoo | Python |
 |---|---|---|
-| `16.0` | 16.0 Community / Enterprise | 3.8+ |
-| `17.0` | 17.0 Community / Enterprise | 3.10+ |
-| `18.0` | 18.0 Community / Enterprise | 3.10+ |
-| `19.0` | 19.0 Community / Enterprise | 3.10+ |
-| `20.0` | 20.0 Community / Enterprise | 3.12+ |
+| `16.0` | [16.0](https://apps.odoo.com/apps/modules/16.0/l10n_ve_bcv_rate) Community / Enterprise | 3.8+ |
+| `17.0` | [17.0](https://apps.odoo.com/apps/modules/17.0/l10n_ve_bcv_rate) Community / Enterprise | 3.10+ |
+| `18.0` | [18.0](https://apps.odoo.com/apps/modules/18.0/l10n_ve_bcv_rate) Community / Enterprise | 3.10+ |
+| `19.0` | [19.0](https://apps.odoo.com/apps/modules/19.0/l10n_ve_bcv_rate) Community / Enterprise | 3.10+ |
+| `20.0` | [20.0](https://apps.odoo.com/apps/modules/20.0/l10n_ve_bcv_rate) Community / Enterprise | 3.12+ |
 
 Works on Odoo.sh and on-premise. **Not available on Odoo Online** (SaaS), which does not
 allow third-party modules. Standalone: it does not use Enterprise's `currency_rate_live`.
