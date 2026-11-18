@@ -183,9 +183,6 @@ msgstr "Las fechas anteriores al %(date)s se cargan día por día; elija un rang
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__display_name
-#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_today_client__display_name
-#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__display_name
-#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__display_name
 msgid "Display Name"
 msgstr "Nombre para mostrar"
 
@@ -196,9 +193,6 @@ msgstr "Desde"
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__id
-#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_today_client__id
-#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__id
-#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__id
 msgid "ID"
 msgstr "ID"
 

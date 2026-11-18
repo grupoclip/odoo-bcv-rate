@@ -8,7 +8,7 @@ from odoo import api, models
 
 _logger = logging.getLogger(__name__)
 
-MODULE_VERSION = "19.0.1.0.0"
+MODULE_VERSION = "18.0.1.0.0"
 API_BASE = "https://bcv.today/api/v1"
 USER_AGENT = "odoo-l10n_ve_bcv_rate/%s (+https://bcv.today)" % MODULE_VERSION
 TIMEOUT = 20  # seconds
