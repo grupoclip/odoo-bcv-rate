@@ -133,9 +133,14 @@ class TestUpdate(BcvCase):
         with self.mock_api():
             self.env["res.company"]._cron_bcv_update_rates()
         self.assertTrue(self.company_ves.bcv_next_update)
+        # Saving the settings again with the same values keeps the schedule.
+        self.company_ves.write({"bcv_auto_update": True, "bcv_interval": "weekly"})
+        self.assertTrue(self.company_ves.bcv_next_update)
         with self.mock_api() as calls:
             self.env["res.company"]._cron_bcv_update_rates()
         self.assertEqual(calls, [])  # not due yet
+        self.company_ves.bcv_interval = "monthly"
+        self.assertFalse(self.company_ves.bcv_next_update)  # new schedule: due now
 
     def test_update_now_button(self):
         settings = self.env["res.config.settings"].with_company(self.company_ves).create({})
