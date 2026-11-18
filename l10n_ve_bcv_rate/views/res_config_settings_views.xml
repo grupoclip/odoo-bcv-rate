@@ -39,9 +39,9 @@
                         </div>
                         <div class="mt8">
                             <button name="action_bcv_update_now" type="object" string="Update now"
-                                    class="btn-link" icon="fa-refresh" invisible="not bcv_company_supported"/>
+                                    class="btn-link" icon="refresh" invisible="not bcv_company_supported"/>
                             <button name="%(l10n_ve_bcv_rate.action_bcv_rate_backfill)d" type="action"
-                                    string="Load history" class="btn-link" icon="fa-history"
+                                    string="Load history" class="btn-link" icon="history"
                                     invisible="not bcv_company_supported"/>
                         </div>
                         <div class="mt8 text-muted small">

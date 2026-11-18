@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bcv_rate_backfill_manager,bcv.rate.backfill manager,model_bcv_rate_backfill,account.group_account_manager,1,1,1,1
-access_bcv_rate_backfill_system,bcv.rate.backfill system,model_bcv_rate_backfill,base.group_system,1,1,1,1

@@ -121,10 +121,14 @@ msgid "Cancel"
 msgstr "Cancelar"
 
 #. module: l10n_ve_bcv_rate
-#: model:ir.model,name:l10n_ve_bcv_rate.model_res_company
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__company_ids
 msgid "Companies"
 msgstr "Compañías"
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model,name:l10n_ve_bcv_rate.model_res_company
+msgid "Company"
+msgstr "Compañía"
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_company_supported
@@ -172,6 +176,13 @@ msgstr "Monedas actualizadas desde el BCV"
 #: model:ir.model.fields.selection,name:l10n_ve_bcv_rate.selection__res_company__bcv_interval__daily
 msgid "Daily"
 msgstr "Diaria"
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.module.module,summary:base.module_l10n_ve_bcv_rate
+msgid ""
+"Daily official Banco Central de Venezuela rates (USD, EUR, CNY, TRY, RUB) "
+"from the free BCV Today API. Tasa BCV automática."
+msgstr "Tasa oficial diaria del Banco Central de Venezuela (USD, EUR, CNY, TRY, RUB) desde la API gratuita de BCV Today. Tasa BCV automática."
 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
@@ -368,6 +379,11 @@ msgstr "Actualiza cada día las tasas de cambio de esta compañía con la tasa o
 #: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
 msgid "Value date"
 msgstr "Fecha valor"
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.module.module,shortdesc:base.module_l10n_ve_bcv_rate
+msgid "Venezuela - BCV Exchange Rates (BCV Today)"
+msgstr "Venezuela - Tasas de cambio BCV (BCV Today)"
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.model.fields.selection,name:l10n_ve_bcv_rate.selection__res_company__bcv_interval__weekly

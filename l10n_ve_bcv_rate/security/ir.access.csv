@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+access_bcv_rate_backfill_manager,bcv.rate.backfill manager,bcv.rate.backfill,account.group_account_manager,crud,
+access_bcv_rate_backfill_system,bcv.rate.backfill system,bcv.rate.backfill,base.group_system,crud,

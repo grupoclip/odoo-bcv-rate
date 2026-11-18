@@ -3,7 +3,7 @@
     "name": "Venezuela - BCV Exchange Rates (BCV Today)",
     "summary": "Daily official Banco Central de Venezuela rates (USD, EUR, CNY, TRY, RUB) "
                "from the free BCV Today API. Tasa BCV automática.",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "category": "Accounting/Localizations",
     "author": "BCV Today",
     "website": "https://bcv.today",
@@ -11,7 +11,7 @@
     "countries": ["ve"],
     "depends": ["account"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "data/ir_cron.xml",
         "wizard/bcv_rate_backfill_views.xml",
         "views/res_config_settings_views.xml",
