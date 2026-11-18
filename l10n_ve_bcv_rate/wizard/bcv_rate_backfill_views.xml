@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="bcv_rate_backfill_view_form" model="ir.ui.view">
+        <field name="name">bcv.rate.backfill.form</field>
+        <field name="model">bcv.rate.backfill</field>
+        <field name="arch" type="xml">
+            <form string="Load historical BCV rates">
+                <p class="text-muted">
+                    Creates or updates one rate per BCV value date (fecha valor) in the range, for each
+                    selected company. Weekends and holidays reuse the previous value date, as in Odoo.
+                    Data available from 2021-08-02, at most 1830 days per run.
+                </p>
+                <group>
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <group>
+                        <field name="company_ids" widget="many2many_tags" options="{'no_create': True}"
+                               groups="base.group_multi_company"/>
+                    </group>
+                </group>
+                <p class="text-muted small">
+                    Source: Banco Central de Venezuela, via BCV Today (https://bcv.today, data CC BY 4.0).
+                </p>
+                <footer>
+                    <button name="action_backfill" type="object" string="Load rates" class="btn-primary"
+                            data-hotkey="q"/>
+                    <button special="cancel" string="Cancel" class="btn-secondary" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bcv_rate_backfill" model="ir.actions.act_window">
+        <field name="name">Load historical BCV rates</field>
+        <field name="res_model">bcv.rate.backfill</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="group_ids" eval="[(4, ref('account.group_account_manager')), (4, ref('base.group_system'))]"/>
+    </record>
+</odoo>

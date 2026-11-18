@@ -1,0 +1,379 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_ve_bcv_rate
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-18 17:07+0000\n"
+"PO-Revision-Date: 2026-11-18 17:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+msgid ""
+"%(company)s: %(days)s value dates, %(created)s rates created, %(updated)s "
+"updated, %(unchanged)s unchanged, %(missing)s currency/day pairs not "
+"published."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "(data CC BY 4.0). Unofficial service, not affiliated with the BCV."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "All active BCV currencies"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__bcv_auto_update
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_auto_update
+msgid "Automatic BCV rates"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_available_currency_ids
+msgid "Available BCV currencies"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "BCV Today"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model,name:l10n_ve_bcv_rate.model_bcv_today_client
+msgid "BCV Today API client"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+msgid "BCV Today could not be read (%(error)s). Previous rates were kept."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+msgid "BCV Today could not be read: %(error)s"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+msgid "BCV Today has data from %(date)s onwards."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+msgid "BCV Today has no rates in the selected range."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.actions.server,name:l10n_ve_bcv_rate.ir_cron_bcv_update_rates_ir_actions_server
+msgid "BCV Today: update currency rates"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "BCV exchange rates"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+msgid "BCV history loaded"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/models/res_config_settings.py:0
+msgid "BCV rates"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+msgid ""
+"BCV rates of %(date)s: %(created)s created, %(updated)s updated, "
+"%(unchanged)s unchanged."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__bcv_interval
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_interval
+msgid "BCV update interval"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.bcv_rate_backfill_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model,name:l10n_ve_bcv_rate.model_res_company
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__company_ids
+msgid "Companies"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_company_supported
+msgid "Company currency published by the BCV"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model,name:l10n_ve_bcv_rate.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.bcv_rate_backfill_view_form
+msgid ""
+"Creates or updates one rate per BCV value date (fecha valor) in the range, for each\n"
+"                    selected company. Weekends and holidays reuse the previous value date, as in Odoo.\n"
+"                    Data available from 2021-08-02, at most 1830 days per run."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "Currencies"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__bcv_currency_ids
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_currency_ids
+msgid "Currencies updated from BCV"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields.selection,name:l10n_ve_bcv_rate.selection__res_company__bcv_interval__daily
+msgid "Daily"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+msgid ""
+"Dates before %(date)s are loaded one day at a time; choose a range with at "
+"most %(count)s such days."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__display_name
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_today_client__display_name
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__display_name
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__date_from
+msgid "From"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__id
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_today_client__id
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__id
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "Interval"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__bcv_last_status
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_last_status
+msgid "Last BCV result"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__bcv_last_sync
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_last_sync
+msgid "Last BCV update"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__bcv_last_effective_date
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_last_effective_date
+msgid "Last BCV value date"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "Last update"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,help:l10n_ve_bcv_rate.field_res_company__bcv_currency_ids
+#: model:ir.model.fields,help:l10n_ve_bcv_rate.field_res_config_settings__bcv_currency_ids
+msgid ""
+"Leave empty to update every active currency published by the BCV (USD, EUR, "
+"CNY, TRY, RUB, and the bolivar when the company currency is not the "
+"bolivar)."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+msgid "Load at most %(days)s days at a time."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.actions.act_window,name:l10n_ve_bcv_rate.action_bcv_rate_backfill
+#: model:ir.model,name:l10n_ve_bcv_rate.model_bcv_rate_backfill
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.bcv_rate_backfill_view_form
+msgid "Load historical BCV rates"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "Load history"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.bcv_rate_backfill_view_form
+msgid "Load rates"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields.selection,name:l10n_ve_bcv_rate.selection__res_company__bcv_interval__monthly
+msgid "Monthly"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__bcv_next_update
+msgid "Next BCV update"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+msgid ""
+"No active currency to update: activate VES, USD, EUR, CNY, TRY or RUB in the"
+" currencies list."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+msgid "Not published that day: %(codes)s."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "Official Banco Central de Venezuela rates from the free BCV Today API."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+msgid "Only accounting managers can update or load BCV rates."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "Source: Banco Central de Venezuela, via"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.bcv_rate_backfill_view_form
+msgid ""
+"Source: Banco Central de Venezuela, via BCV Today (https://bcv.today, data "
+"CC BY 4.0)."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+msgid ""
+"The company currency %(currency)s is not published by the BCV; nothing was "
+"updated."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid ""
+"The company currency is not published by the BCV (supported: VES, USD, EUR, "
+"CNY, TRY, RUB). Rates will not be updated."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+msgid "The end date must be on or after the start date."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__date_to
+msgid "To"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#. odoo-python
+#: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+msgid "Unexpected error, previous rates were kept: %(error)s"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "Update now"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,help:l10n_ve_bcv_rate.field_res_company__bcv_auto_update
+#: model:ir.model.fields,help:l10n_ve_bcv_rate.field_res_config_settings__bcv_auto_update
+msgid ""
+"Update this company's currency rates every day with the official Banco "
+"Central de Venezuela rate published by BCV Today."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid "Value date"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields.selection,name:l10n_ve_bcv_rate.selection__res_company__bcv_interval__weekly
+msgid "Weekly"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,help:l10n_ve_bcv_rate.field_res_company__bcv_next_update
+msgid ""
+"Weekly/monthly intervals only: first day on which the scheduled action "
+"updates the rates again. Empty means on its next run."
+msgstr ""

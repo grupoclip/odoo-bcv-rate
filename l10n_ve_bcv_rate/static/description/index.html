@@ -1,0 +1,116 @@
+<section class="oe_container" style="background:#f7f4ee;color:#1f1b16;padding:32px 16px;">
+    <div class="oe_row" style="max-width:920px;margin:0 auto;">
+        <h2 style="color:#17402b;font-weight:700;margin:0 0 8px;">Tasa BCV automática para Odoo</h2>
+        <h3 style="color:#4a4339;font-weight:400;font-size:18px;margin:0 0 20px;">Official Banco Central de Venezuela exchange rates, every day, in your company currencies</h3>
+        <p style="font-size:15px;line-height:1.6;">
+            Mantiene al día las tasas de cambio de cada compañía con la tasa oficial del
+            <b>Banco Central de Venezuela</b> (USD, EUR, CNY, TRY y RUB), leída de la API gratuita de
+            <a href="https://bcv.today" target="_blank" style="color:#2e7d4f;">BCV Today</a>.
+            Sin claves, sin dependencias externas, igual en Community y Enterprise.
+        </p>
+        <p style="font-size:15px;line-height:1.6;color:#4a4339;">
+            Keeps every company's currency rates up to date with the official Banco Central de Venezuela
+            rate from the free BCV Today API. No API key, no extra Python packages, same behaviour on
+            Community and Enterprise.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container" style="padding:28px 16px;">
+    <div class="oe_row" style="max-width:920px;margin:0 auto;">
+        <h3 style="color:#17402b;">Funciones / Features</h3>
+        <ul style="font-size:15px;line-height:1.7;">
+            <li><b>Actualización diaria automática</b> por compañía (acción planificada a las 23:30 hora de Caracas) /
+                <i>daily automatic update per company</i>.</li>
+            <li><b>Fecha valor</b>: cada tasa se guarda con la fecha valor publicada por el BCV; si se repite el día, se actualiza en vez de duplicarse /
+                <i>rates are dated with the BCV value date and updated in place, never duplicated</i>.</li>
+            <li><b>Compañía en bolívares o en dólares</b> (y EUR, CNY, TRY, RUB por tasas cruzadas) /
+                <i>works whether the company currency is VES, USD or any other BCV currency</i>.</li>
+            <li><b>Elija las monedas</b> a actualizar, o deje que use todas las activas /
+                <i>pick the currencies, or let it use every active one</i>.</li>
+            <li><b>Cargar histórico</b>: asistente para cargar tasas desde el 02-08-2021 (hasta 1830 días por vez) con una sola consulta /
+                <i>backfill wizard from 2021-08-02, up to 1830 days, one request</i>.</li>
+            <li><b>Botón «Actualizar ahora»</b> y estado de la última actualización en Ajustes /
+                <i>"Update now" button and last-update status in Settings</i>.</li>
+            <li><b>Multiempresa</b> y tolerante a fallos de red: si la API no responde, se mantiene la tasa anterior y el cron sigue /
+                <i>multi-company and network-safe: on failure the previous rate stays, the scheduler keeps running</i>.</li>
+            <li>Español (es, es_VE) e inglés / <i>Spanish and English</i>.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container" style="background:#f7f4ee;padding:28px 16px;">
+    <div class="oe_row" style="max-width:920px;margin:0 auto;">
+        <h3 style="color:#17402b;">Configuración / Setup</h3>
+        <ol style="font-size:15px;line-height:1.7;">
+            <li>Active las monedas que usa (VES, USD, EUR…) en <i>Contabilidad › Configuración › Monedas</i> /
+                activate the currencies you use.</li>
+            <li>Vaya a <i>Ajustes › Contabilidad (Facturación) › Monedas › Tasas de cambio BCV</i> y marque
+                <b>Tasas BCV automáticas</b> / go to Settings › Invoicing › Currencies › BCV exchange rates and enable it.</li>
+            <li>Opcional: elija monedas y frecuencia (diaria, semanal, mensual); pulse <b>Actualizar ahora</b> /
+                optional: choose currencies and interval; press <b>Update now</b>.</li>
+            <li>Opcional: <b>Cargar histórico</b> para llenar fechas pasadas / optional: <b>Load history</b> to backfill past dates.</li>
+        </ol>
+    </div>
+</section>
+
+<section class="oe_container" style="padding:28px 16px;">
+    <div class="oe_row" style="max-width:920px;margin:0 auto;">
+        <h3 style="color:#17402b;">Cómo se calcula la tasa / How the rate is computed</h3>
+        <p style="font-size:15px;line-height:1.6;">
+            El BCV publica <b>bolívares por 1 unidad</b> de cada divisa. Odoo guarda en cada tasa
+            <b>unidades de esa moneda por 1 unidad de la moneda de la compañía</b>. El módulo convierte:
+            <code>tasa(X) = Bs por 1 [moneda de la compañía] / Bs por 1 X</code>.
+            <br/>
+            <span style="color:#4a4339;">BCV publishes bolivars per 1 unit; Odoo stores units of the currency per 1 unit of the
+            company currency, so <code>rate(X) = Bs per company currency / Bs per X</code>.</span>
+        </p>
+        <table class="table table-sm" style="font-size:14px;max-width:720px;">
+            <thead>
+                <tr style="background:#17402b;color:#f7f4ee;">
+                    <th>BCV: 1 USD = 916,6477 Bs · 1 EUR = 1.007,3867 Bs</th>
+                    <th>Tasa guardada (rate)</th>
+                    <th>Se ve en Odoo como</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Compañía en <b>VES</b> · USD</td><td><code>1 / 916.6477 = 0.00109093…</code></td><td>916,6477 VES por USD</td></tr>
+                <tr><td>Compañía en <b>VES</b> · EUR</td><td><code>1 / 1007.3867 = 0.00099267…</code></td><td>1.007,3867 VES por EUR</td></tr>
+                <tr><td>Compañía en <b>USD</b> · VES</td><td><code>916.6477</code></td><td>0,00109093 USD por VES</td></tr>
+                <tr><td>Compañía en <b>USD</b> · EUR</td><td><code>916.6477 / 1007.3867 = 0.90992…</code></td><td>1,0990 USD por EUR</td></tr>
+            </tbody>
+        </table>
+        <p style="font-size:14px;color:#4a4339;">
+            Sin redondeo adicional: el campo <code>rate</code> de Odoo no tiene precisión fija, se guarda el resultado
+            completo de la división. / No extra rounding: Odoo's <code>rate</code> field is unrounded.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container" style="background:#f7f4ee;padding:28px 16px;">
+    <div class="oe_row" style="max-width:920px;margin:0 auto;">
+        <h3 style="color:#17402b;">Compatibilidad / Compatibility</h3>
+        <ul style="font-size:15px;line-height:1.7;">
+            <li>Odoo 16.0, 17.0, 18.0, 19.0 y 20.0, Community y Enterprise; Odoo.sh y servidores propios /
+                Community and Enterprise, Odoo.sh and on-premise.</li>
+            <li><b>No disponible en Odoo Online</b> (SaaS): no admite módulos de terceros /
+                <b>not available on Odoo Online</b>, which does not allow custom modules.</li>
+            <li>Independiente: no usa ni requiere <code>currency_rate_live</code> de Enterprise /
+                standalone, does not use Enterprise <code>currency_rate_live</code>.</li>
+            <li>Solo depende de <code>account</code>; requiere salida HTTPS a <code>bcv.today</code> /
+                depends only on <code>account</code>; needs outbound HTTPS to <code>bcv.today</code>.</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container" style="padding:28px 16px;">
+    <div class="oe_row" style="max-width:920px;margin:0 auto;font-size:14px;color:#4a4339;">
+        <p><b>Fuente: Banco Central de Venezuela, vía BCV Today</b> (<a href="https://bcv.today" target="_blank" style="color:#2e7d4f;">bcv.today</a>).
+            Datos publicados bajo licencia CC BY 4.0: cite la fuente al redistribuirlos. /
+            Data licensed CC BY 4.0, attribution required.</p>
+        <p><b>Aviso:</b> BCV Today es un servicio independiente y no oficial, sin relación con el Banco Central de Venezuela.
+            Verifique las tasas antes de operaciones críticas. /
+            <b>Disclaimer:</b> BCV Today is an independent, unofficial service, not affiliated with the Banco Central de Venezuela.</p>
+        <p>Código del módulo bajo licencia LGPL-3 · Module code licensed LGPL-3.</p>
+    </div>
+</section>

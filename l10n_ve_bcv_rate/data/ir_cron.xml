@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--
+        Runs every day at 03:30 UTC = 23:30 America/Caracas (UTC-4, no DST).
+        The BCV publishes the next value date's rate in the afternoon/evening
+        (typically 16:00-18:00 Caracas) and BCV Today has picked it up by
+        ~22:30 Caracas in the samples we checked, so this run writes the rate
+        before its value date starts. The action is active but does nothing
+        until a company enables "Automatic BCV rates" in the settings.
+    -->
+    <record id="ir_cron_bcv_update_rates" model="ir.cron">
+        <field name="name">BCV Today: update currency rates</field>
+        <field name="model_id" ref="base.model_res_company"/>
+        <field name="state">code</field>
+        <field name="code">model._cron_bcv_update_rates()</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="nextcall" eval="(DateTime.now() - timedelta(hours=3, minutes=30) + timedelta(days=1)).strftime('%Y-%m-%d 03:30:00')"/>
+        <field name="priority">5</field>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>
