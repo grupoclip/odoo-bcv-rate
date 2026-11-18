@@ -4,7 +4,7 @@ import logging
 
 from dateutil.relativedelta import relativedelta
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import AccessError
 
 from .bcv_client import BcvFetchError
@@ -127,7 +127,7 @@ class ResCompany(models.Model):
         company_code = self._bcv_company_code()
         if not company_code:
             raise BcvDataError(
-                self.env._(
+                _(
                     "The company currency %(currency)s is not published by the BCV; "
                     "nothing was updated.",
                     currency=self.currency_id.name,
@@ -136,7 +136,7 @@ class ResCompany(models.Model):
         targets = self._bcv_target_currencies()
         if not targets:
             raise BcvDataError(
-                self.env._(
+                _(
                     "No active currency to update: activate VES, USD, EUR, CNY, TRY or "
                     "RUB in the currencies list."
                 )
@@ -184,7 +184,7 @@ class ResCompany(models.Model):
         return result
 
     def _bcv_result_message(self, effective_date, result):
-        message = self.env._(
+        message = _(
             "BCV rates of %(date)s: %(created)s created, %(updated)s updated, "
             "%(unchanged)s unchanged.",
             date=effective_date,
@@ -193,7 +193,7 @@ class ResCompany(models.Model):
             unchanged=result["unchanged"],
         )
         if result["missing"]:
-            message += " " + self.env._(
+            message += " " + _(
                 "Not published that day: %(codes)s.", codes=", ".join(result["missing"])
             )
         return message
@@ -203,7 +203,7 @@ class ResCompany(models.Model):
                 or self.env.user.has_group("base.group_system"):
             return
         raise AccessError(
-            self.env._("Only accounting managers can update or load BCV rates.")
+            _("Only accounting managers can update or load BCV rates.")
         )
 
     def bcv_update_rates(self):
@@ -221,7 +221,7 @@ class ResCompany(models.Model):
             effective_date, bs_rates = parse_entry(payload)
         except (BcvFetchError, BcvDataError) as error:
             _logger.warning("BCV Today: update failed, previous rates kept: %s", error)
-            message = self.env._(
+            message = _(
                 "BCV Today could not be read (%(error)s). Previous rates were kept.",
                 error=error,
             )
@@ -245,7 +245,7 @@ class ResCompany(models.Model):
             except Exception as error:  # never break the cron queue
                 ok = False
                 _logger.exception("BCV Today: company %s failed", company.name)
-                message = self.env._(
+                message = _(
                     "Unexpected error, previous rates were kept: %(error)s", error=error
                 )
             values["bcv_last_status"] = message

@@ -11,6 +11,7 @@
                          help="Official Banco Central de Venezuela rates from the free BCV Today API.">
                     <field name="bcv_auto_update"/>
                     <div class="content-group">
+                        <field name="bcv_company_supported" invisible="1"/>
                         <div class="text-warning mt8" invisible="bcv_company_supported">
                             The company currency is not published by the BCV (supported: VES, USD, EUR, CNY, TRY, RUB). Rates will not be updated.
                         </div>

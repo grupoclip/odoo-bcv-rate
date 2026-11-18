@@ -2,7 +2,7 @@
 import datetime
 import logging
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 
 from ..models.bcv_client import BcvFetchError
@@ -45,17 +45,17 @@ class BcvRateBackfill(models.TransientModel):
         for wizard in self:
             if wizard.date_from < FIRST_DATE:
                 raise ValidationError(
-                    self.env._(
+                    _(
                         "BCV Today has data from %(date)s onwards.", date=FIRST_DATE
                     )
                 )
             if wizard.date_to < wizard.date_from:
                 raise ValidationError(
-                    self.env._("The end date must be on or after the start date.")
+                    _("The end date must be on or after the start date.")
                 )
             if (wizard.date_to - wizard.date_from).days + 1 > MAX_BACKFILL_DAYS:
                 raise ValidationError(
-                    self.env._(
+                    _(
                         "Load at most %(days)s days at a time.", days=MAX_BACKFILL_DAYS
                     )
                 )
@@ -83,7 +83,7 @@ class BcvRateBackfill(models.TransientModel):
             count = (last - self.date_from).days + 1
             if count > MAX_DAY_REQUESTS:
                 raise UserError(
-                    self.env._(
+                    _(
                         "Dates before %(date)s are loaded one day at a time; choose a "
                         "range with at most %(count)s such days.",
                         date=window_start,
@@ -106,10 +106,10 @@ class BcvRateBackfill(models.TransientModel):
             entries = self._bcv_collect_entries()
         except BcvFetchError as error:
             raise UserError(
-                self.env._("BCV Today could not be read: %(error)s", error=error)
+                _("BCV Today could not be read: %(error)s", error=error)
             ) from error
         if not entries:
-            raise UserError(self.env._("BCV Today has no rates in the selected range."))
+            raise UserError(_("BCV Today has no rates in the selected range."))
 
         lines = []
         for company in self.company_ids:
@@ -125,7 +125,7 @@ class BcvRateBackfill(models.TransientModel):
                 lines.append("%s: %s" % (company.name, error))
                 continue
             lines.append(
-                self.env._(
+                _(
                     "%(company)s: %(days)s value dates, %(created)s rates created, "
                     "%(updated)s updated, %(unchanged)s unchanged, %(missing)s "
                     "currency/day pairs not published.",
@@ -138,7 +138,7 @@ class BcvRateBackfill(models.TransientModel):
             "type": "ir.actions.client",
             "tag": "display_notification",
             "params": {
-                "title": self.env._("BCV history loaded"),
+                "title": _("BCV history loaded"),
                 "message": "\n".join(lines),
                 "type": "success",
                 "sticky": True,

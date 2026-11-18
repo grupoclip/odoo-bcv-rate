@@ -18,6 +18,7 @@ msgstr ""
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+#, python-format
 msgid ""
 "%(company)s: %(days)s value dates, %(created)s rates created, %(updated)s "
 "updated, %(unchanged)s unchanged, %(missing)s currency/day pairs not "
@@ -58,24 +59,28 @@ msgstr "Cliente de la API de BCV Today"
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+#, python-format
 msgid "BCV Today could not be read (%(error)s). Previous rates were kept."
 msgstr "No se pudo leer BCV Today (%(error)s). Se mantienen las tasas anteriores."
 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+#, python-format
 msgid "BCV Today could not be read: %(error)s"
 msgstr "No se pudo leer BCV Today: %(error)s"
 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+#, python-format
 msgid "BCV Today has data from %(date)s onwards."
 msgstr "BCV Today tiene datos desde el %(date)s."
 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+#, python-format
 msgid "BCV Today has no rates in the selected range."
 msgstr "BCV Today no tiene tasas en el rango seleccionado."
 
@@ -92,18 +97,21 @@ msgstr "Tasas de cambio BCV"
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+#, python-format
 msgid "BCV history loaded"
 msgstr "Histórico BCV cargado"
 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/models/res_config_settings.py:0
+#, python-format
 msgid "BCV rates"
 msgstr "Tasas BCV"
 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+#, python-format
 msgid ""
 "BCV rates of %(date)s: %(created)s created, %(updated)s updated, "
 "%(unchanged)s unchanged."
@@ -176,6 +184,7 @@ msgstr "Diaria"
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+#, python-format
 msgid ""
 "Dates before %(date)s are loaded one day at a time; choose a range with at "
 "most %(count)s such days."
@@ -246,6 +255,7 @@ msgstr "Déjelo vacío para actualizar todas las monedas activas que publica el 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+#, python-format
 msgid "Load at most %(days)s days at a time."
 msgstr "Cargue como máximo %(days)s días a la vez."
 
@@ -279,6 +289,7 @@ msgstr "Próxima actualización BCV"
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+#, python-format
 msgid ""
 "No active currency to update: activate VES, USD, EUR, CNY, TRY or RUB in the"
 " currencies list."
@@ -287,6 +298,7 @@ msgstr "No hay monedas activas para actualizar: active VES, USD, EUR, CNY, TRY o
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+#, python-format
 msgid "Not published that day: %(codes)s."
 msgstr "No publicadas ese día: %(codes)s."
 
@@ -298,6 +310,7 @@ msgstr "Tasas oficiales del Banco Central de Venezuela desde la API gratuita de 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+#, python-format
 msgid "Only accounting managers can update or load BCV rates."
 msgstr "Solo los administradores de contabilidad pueden actualizar o cargar tasas BCV."
 
@@ -316,6 +329,7 @@ msgstr "Fuente: Banco Central de Venezuela, vía BCV Today (https://bcv.today, d
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+#, python-format
 msgid ""
 "The company currency %(currency)s is not published by the BCV; nothing was "
 "updated."
@@ -331,6 +345,7 @@ msgstr "El BCV no publica la moneda de la compañía (admitidas: VES, USD, EUR, 
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/wizard/bcv_rate_backfill.py:0
+#, python-format
 msgid "The end date must be on or after the start date."
 msgstr "La fecha final debe ser igual o posterior a la inicial."
 
@@ -342,6 +357,7 @@ msgstr "Hasta"
 #. module: l10n_ve_bcv_rate
 #. odoo-python
 #: code:addons/l10n_ve_bcv_rate/models/res_company.py:0
+#, python-format
 msgid "Unexpected error, previous rates were kept: %(error)s"
 msgstr "Error inesperado; se mantienen las tasas anteriores: %(error)s"
 
