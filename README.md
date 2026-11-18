@@ -5,7 +5,7 @@ official **Banco Central de Venezuela** rate (USD, EUR, CNY, TRY, RUB) from the 
 [BCV Today API](https://bcv.today). No API key, no extra Python packages.
 
 **Instalar desde la tienda de Odoo / Install from the Odoo Apps Store (free):**
-[apps.odoo.com/apps/modules/18.0/l10n_ve_bcv_rate](https://apps.odoo.com/apps/modules/18.0/l10n_ve_bcv_rate)
+[apps.odoo.com/apps/modules/l10n_ve_bcv_rate](https://apps.odoo.com/apps/modules/l10n_ve_bcv_rate)
 
 
 | Branch | Odoo | Python |
