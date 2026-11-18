@@ -6,7 +6,7 @@
             Mantiene al d&#237;a las tasas de cambio de cada compa&#241;&#237;a con la tasa oficial del
             <b>Banco Central de Venezuela</b> (USD, EUR, CNY, TRY y RUB), le&#237;da de la API gratuita de
             <a href="https://bcv.today" target="_blank" style="color:#2e7d4f;">BCV Today</a>.
-            Sin claves, sin dependencias externas, igual en Community y Enterprise.
+            Sin clave de API ni dependencias externas; funciona igual en Community y Enterprise.
         </p>
         <p style="font-size:15px;line-height:1.6;color:#4a4339;">
             Keeps every company's currency rates up to date with the official Banco Central de Venezuela
@@ -20,19 +20,19 @@
     <div class="oe_row" style="max-width:920px;margin:0 auto;">
         <h3 style="color:#17402b;">Funciones / Features</h3>
         <ul style="font-size:15px;line-height:1.7;">
-            <li><b>Actualizaci&#243;n diaria autom&#225;tica</b> por compa&#241;&#237;a (acci&#243;n planificada a las 23:30 hora de Caracas) /
+            <li><b>Actualizaci&#243;n diaria autom&#225;tica</b> por compa&#241;&#237;a (acci&#243;n programada a las 23:30 hora de Caracas) /
                 <i>daily automatic update per company</i>.</li>
-            <li><b>Fecha valor</b>: cada tasa se guarda con la fecha valor publicada por el BCV; si se repite el d&#237;a, se actualiza en vez de duplicarse /
+            <li><b>Fecha valor</b>: cada tasa se guarda con la fecha valor publicada por el BCV; si se vuelve a cargar el mismo d&#237;a, se actualiza en lugar de duplicarse /
                 <i>rates are dated with the BCV value date and updated in place, never duplicated</i>.</li>
-            <li><b>Compa&#241;&#237;a en bol&#237;vares o en d&#243;lares</b> (y EUR, CNY, TRY, RUB por tasas cruzadas) /
+            <li><b>Compa&#241;&#237;a en bol&#237;vares o en d&#243;lares</b> (EUR, CNY, TRY y RUB mediante tasas cruzadas) /
                 <i>works whether the company currency is VES, USD or any other BCV currency</i>.</li>
-            <li><b>Elija las monedas</b> a actualizar, o deje que use todas las activas /
+            <li><b>Elige las monedas</b> que se actualizan o deja que use todas las activas /
                 <i>pick the currencies, or let it use every active one</i>.</li>
-            <li><b>Cargar hist&#243;rico</b>: asistente para cargar tasas desde el 02-08-2021 (hasta 1830 d&#237;as por vez) con una sola consulta /
+            <li><b>Cargar hist&#243;rico</b>: asistente para cargar tasas desde el 02-08-2021 (hasta 1830 d&#237;as por carga) con una sola consulta /
                 <i>backfill wizard from 2021-08-02, up to 1830 days, one request</i>.</li>
             <li><b>Bot&#243;n &#171;Actualizar ahora&#187;</b> y estado de la &#250;ltima actualizaci&#243;n en Ajustes /
                 <i>"Update now" button and last-update status in Settings</i>.</li>
-            <li><b>Multiempresa</b> y tolerante a fallos de red: si la API no responde, se mantiene la tasa anterior y el cron sigue /
+            <li><b>Multiempresa</b> y tolerante a fallos de red: si la API no responde, se mantiene la tasa anterior y la acci&#243;n programada sigue funcionando /
                 <i>multi-company and network-safe: on failure the previous rate stays, the scheduler keeps running</i>.</li>
             <li>Espa&#241;ol (es, es_VE) e ingl&#233;s / <i>Spanish and English</i>.</li>
         </ul>
@@ -43,13 +43,13 @@
     <div class="oe_row" style="max-width:920px;margin:0 auto;">
         <h3 style="color:#17402b;">Configuraci&#243;n / Setup</h3>
         <ol style="font-size:15px;line-height:1.7;">
-            <li>Active las monedas que usa (VES, USD, EUR&#8230;) en <i>Contabilidad &#8250; Configuraci&#243;n &#8250; Monedas</i> /
+            <li>Activa las monedas que usas (VES, USD, EUR&#8230;) en <i>Contabilidad &#8250; Configuraci&#243;n &#8250; Monedas</i> /
                 activate the currencies you use.</li>
-            <li>Vaya a <i>Ajustes &#8250; Contabilidad (Facturaci&#243;n) &#8250; Monedas &#8250; Tasas de cambio BCV</i> y marque
+            <li>Ve a <i>Ajustes &#8250; Contabilidad (Facturaci&#243;n) &#8250; Monedas &#8250; Tasas de cambio BCV</i> y activa
                 <b>Tasas BCV autom&#225;ticas</b> / go to Settings &#8250; Invoicing &#8250; Currencies &#8250; BCV exchange rates and enable it.</li>
-            <li>Opcional: elija monedas y frecuencia (diaria, semanal, mensual); pulse <b>Actualizar ahora</b> /
+            <li>Opcional: elige las monedas y la frecuencia (diaria, semanal o mensual) y haz clic en <b>Actualizar ahora</b> /
                 optional: choose currencies and interval; press <b>Update now</b>.</li>
-            <li>Opcional: <b>Cargar hist&#243;rico</b> para llenar fechas pasadas / optional: <b>Load history</b> to backfill past dates.</li>
+            <li>Opcional: <b>Cargar hist&#243;rico</b> para cargar fechas pasadas / optional: <b>Load history</b> to backfill past dates.</li>
         </ol>
     </div>
 </section>
@@ -81,7 +81,7 @@
             </tbody>
         </table>
         <p style="font-size:14px;color:#4a4339;">
-            Sin redondeo adicional: el campo <code>rate</code> de Odoo no tiene precisi&#243;n fija, se guarda el resultado
+            Sin redondeo adicional: el campo <code>rate</code> de Odoo no tiene precisi&#243;n fija, as&#237; que se guarda el resultado
             completo de la divisi&#243;n. / No extra rounding: Odoo's <code>rate</code> field is unrounded.
         </p>
     </div>
@@ -106,10 +106,10 @@
 <section class="oe_container" style="padding:28px 16px;">
     <div class="oe_row" style="max-width:920px;margin:0 auto;font-size:14px;color:#4a4339;">
         <p><b>Fuente: Banco Central de Venezuela, v&#237;a BCV Today</b> (<a href="https://bcv.today" target="_blank" style="color:#2e7d4f;">bcv.today</a>).
-            Datos publicados bajo licencia CC BY 4.0: cite la fuente al redistribuirlos. /
+            Datos publicados bajo licencia CC BY 4.0: cita la fuente al redistribuirlos. /
             Data licensed CC BY 4.0, attribution required.</p>
         <p><b>Aviso:</b> BCV Today es un servicio independiente y no oficial, sin relaci&#243;n con el Banco Central de Venezuela.
-            Verifique las tasas antes de operaciones cr&#237;ticas. /
+            Verifica las tasas antes de operaciones cr&#237;ticas. /
             <b>Disclaimer:</b> BCV Today is an independent, unofficial service, not affiliated with the Banco Central de Venezuela.</p>
         <p>C&#243;digo del m&#243;dulo bajo licencia LGPL-3 &#183; Module code licensed LGPL-3.</p>
     </div>
@@ -122,7 +122,7 @@
             <li><a href="https://bcv.today/integraciones/" target="_blank" style="color:#2e7d4f;">Todas las integraciones</a> /
                 <a href="https://bcv.today/en/integrations/" target="_blank" style="color:#2e7d4f;">all integrations</a>:
                 API JSON, Python, MCP, A2A.</li>
-            <li><a href="https://pypi.org/project/bcv/" target="_blank" style="color:#2e7d4f;">Librer&#237;a Python <code>bcv</code></a>
+            <li><a href="https://pypi.org/project/bcv/" target="_blank" style="color:#2e7d4f;">Biblioteca de Python <code>bcv</code></a>
                 (<code>pip install bcv</code>) / Python library and command line.</li>
             <li>Servidor MCP para asistentes de IA / MCP server for AI assistants:
                 <code>https://mcp.bcv.today/mcp</code>
