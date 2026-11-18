@@ -36,8 +36,7 @@ class BcvRateBackfill(models.TransientModel):
         "res.company",
         string="Companies",
         required=True,
-        domain=[("parent_id", "=", False)],
-        default=lambda self: self.env.company.root_id,
+        default=lambda self: self.env.company,
     )
 
     @api.constrains("date_from", "date_to")

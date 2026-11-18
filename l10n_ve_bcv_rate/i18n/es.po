@@ -32,6 +32,14 @@ msgstr "(datos CC BY 4.0). Servicio no oficial, sin relación con el BCV."
 
 #. module: l10n_ve_bcv_rate
 #: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
+msgstr "<span class=\"fa fa-lg fa-building-o\" title=\"Los valores establecidos aquí son específicos de la compañía.\" aria-label=\"Los valores establecidos aquí son específicos de la compañía.\" groups=\"base.group_multi_company\" role=\"img\"/>"
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
 msgid "All active BCV currencies"
 msgstr "Todas las monedas BCV activas"
 
@@ -86,6 +94,7 @@ msgstr "BCV Today no tiene tasas en el rango seleccionado."
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.actions.server,name:l10n_ve_bcv_rate.ir_cron_bcv_update_rates_ir_actions_server
+#: model:ir.cron,cron_name:l10n_ve_bcv_rate.ir_cron_bcv_update_rates
 msgid "BCV Today: update currency rates"
 msgstr "BCV Today: actualizar tasas de cambio"
 
@@ -227,6 +236,11 @@ msgstr "Última actualización BCV"
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_last_effective_date
 msgid "Last BCV value date"
 msgstr "Última fecha valor BCV"
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill__write_uid

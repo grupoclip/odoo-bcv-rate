@@ -75,9 +75,9 @@ class ResCompany(models.Model):
     # Currency selection
     # ------------------------------------------------------------------
     def _bcv_rate_company(self):
-        """Company that owns the rates (branches share their root's rates)."""
+        """Company that owns the rates (each company has its own in 16.0)."""
         self.ensure_one()
-        return self.root_id or self
+        return self
 
     def _bcv_company_code(self):
         """BCV code of the company currency, or False when not supported."""
@@ -258,7 +258,7 @@ class ResCompany(models.Model):
         """Scheduled action: update every company that enabled BCV rates."""
         today = caracas_today()
         companies = self.sudo().search(
-            [("bcv_auto_update", "=", True), ("parent_id", "=", False)]
+            [("bcv_auto_update", "=", True)]
         )
         due = companies.filtered(
             lambda c: not c.bcv_next_update or c.bcv_next_update <= today

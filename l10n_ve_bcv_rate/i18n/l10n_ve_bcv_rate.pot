@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-18 17:14+0000\n"
-"PO-Revision-Date: 2026-11-18 17:14+0000\n"
+"POT-Creation-Date: 2026-11-18 17:19+0000\n"
+"PO-Revision-Date: 2026-11-18 17:19+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,14 @@ msgstr ""
 #. module: l10n_ve_bcv_rate
 #: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
 msgid "(data CC BY 4.0). Unofficial service, not affiliated with the BCV."
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model_terms:ir.ui.view,arch_db:l10n_ve_bcv_rate.res_config_settings_view_form
+msgid ""
+"<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-"
+"specific.\" aria-label=\"Values set here are company-specific.\" "
+"groups=\"base.group_multi_company\" role=\"img\"/>"
 msgstr ""
 
 #. module: l10n_ve_bcv_rate
@@ -86,6 +94,7 @@ msgstr ""
 
 #. module: l10n_ve_bcv_rate
 #: model:ir.actions.server,name:l10n_ve_bcv_rate.ir_cron_bcv_update_rates_ir_actions_server
+#: model:ir.cron,cron_name:l10n_ve_bcv_rate.ir_cron_bcv_update_rates
 msgid "BCV Today: update currency rates"
 msgstr ""
 
@@ -223,6 +232,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_company__bcv_last_effective_date
 #: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_res_config_settings__bcv_last_effective_date
 msgid "Last BCV value date"
+msgstr ""
+
+#. module: l10n_ve_bcv_rate
+#: model:ir.model.fields,field_description:l10n_ve_bcv_rate.field_bcv_rate_backfill____last_update
+msgid "Last Modified on"
 msgstr ""
 
 #. module: l10n_ve_bcv_rate

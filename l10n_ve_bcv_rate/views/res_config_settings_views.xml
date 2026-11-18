@@ -5,51 +5,58 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="account.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//block[@name='main_currency_setting_container']" position="inside">
-                <setting id="l10n_ve_bcv_rate" string="BCV exchange rates" company_dependent="1"
-                         invisible="not is_root_company"
-                         help="Official Banco Central de Venezuela rates from the free BCV Today API.">
-                    <field name="bcv_auto_update"/>
-                    <div class="content-group">
-                        <field name="bcv_company_supported" invisible="1"/>
-                        <div class="text-warning mt8" invisible="bcv_company_supported">
-                            The company currency is not published by the BCV (supported: VES, USD, EUR, CNY, TRY, RUB). Rates will not be updated.
+            <xpath expr="//div[@id='update_exchange_rates']" position="after">
+                <div class="col-12 col-lg-6 o_setting_box" id="l10n_ve_bcv_rate">
+                    <div class="o_setting_left_pane">
+                        <field name="bcv_auto_update"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="bcv_auto_update" string="BCV exchange rates"/>
+                        <span class="fa fa-lg fa-building-o" title="Values set here are company-specific."
+                              aria-label="Values set here are company-specific." groups="base.group_multi_company" role="img"/>
+                        <div class="text-muted">
+                            Official Banco Central de Venezuela rates from the free BCV Today API.
                         </div>
-                        <div class="row mt16" invisible="not bcv_auto_update">
-                            <label for="bcv_interval" string="Interval" class="col-lg-4 o_light_label"/>
-                            <field name="bcv_interval"/>
-                        </div>
-                        <div class="row mt8">
-                            <label for="bcv_currency_ids" string="Currencies" class="col-lg-4 o_light_label"/>
+                        <div class="content-group">
+                            <field name="bcv_company_supported" invisible="1"/>
                             <field name="bcv_available_currency_ids" invisible="1"/>
-                            <field name="bcv_currency_ids" widget="many2many_tags"
-                                   domain="[('id', 'in', bcv_available_currency_ids)]"
-                                   placeholder="All active BCV currencies"
-                                   options="{'no_create': True}"/>
-                        </div>
-                        <div class="row mt8" invisible="not bcv_last_sync">
-                            <label for="bcv_last_sync" string="Last update" class="col-lg-4 o_light_label"/>
-                            <field name="bcv_last_sync"/>
-                        </div>
-                        <div class="row" invisible="not bcv_last_effective_date">
-                            <label for="bcv_last_effective_date" string="Value date" class="col-lg-4 o_light_label"/>
-                            <field name="bcv_last_effective_date"/>
-                        </div>
-                        <div class="mt4 text-muted" invisible="not bcv_last_status">
-                            <field name="bcv_last_status"/>
-                        </div>
-                        <div class="mt8">
-                            <button name="action_bcv_update_now" type="object" string="Update now"
-                                    class="btn-link" icon="fa-refresh" invisible="not bcv_company_supported"/>
-                            <button name="%(l10n_ve_bcv_rate.action_bcv_rate_backfill)d" type="action"
-                                    string="Load history" class="btn-link" icon="fa-history"
-                                    invisible="not bcv_company_supported"/>
-                        </div>
-                        <div class="mt8 text-muted small">
-                            Source: Banco Central de Venezuela, via <a href="https://bcv.today" target="_blank">BCV Today</a> (data CC BY 4.0). Unofficial service, not affiliated with the BCV.
+                            <div class="text-warning mt8" attrs="{'invisible': [('bcv_company_supported', '=', True)]}">
+                                The company currency is not published by the BCV (supported: VES, USD, EUR, CNY, TRY, RUB). Rates will not be updated.
+                            </div>
+                            <div class="row mt16" attrs="{'invisible': [('bcv_auto_update', '=', False)]}">
+                                <label for="bcv_interval" string="Interval" class="col-lg-4 o_light_label"/>
+                                <field name="bcv_interval"/>
+                            </div>
+                            <div class="row mt8">
+                                <label for="bcv_currency_ids" string="Currencies" class="col-lg-4 o_light_label"/>
+                                <field name="bcv_currency_ids" widget="many2many_tags"
+                                       domain="[('id', 'in', bcv_available_currency_ids)]"
+                                       placeholder="All active BCV currencies"
+                                       options="{'no_create': True}"/>
+                            </div>
+                            <div class="row mt8" attrs="{'invisible': [('bcv_last_sync', '=', False)]}">
+                                <label for="bcv_last_sync" string="Last update" class="col-lg-4 o_light_label"/>
+                                <field name="bcv_last_sync"/>
+                            </div>
+                            <div class="row" attrs="{'invisible': [('bcv_last_effective_date', '=', False)]}">
+                                <label for="bcv_last_effective_date" string="Value date" class="col-lg-4 o_light_label"/>
+                                <field name="bcv_last_effective_date"/>
+                            </div>
+                            <div class="mt4 text-muted" attrs="{'invisible': [('bcv_last_status', '=', False)]}">
+                                <field name="bcv_last_status"/>
+                            </div>
+                            <div class="mt8" attrs="{'invisible': [('bcv_company_supported', '=', False)]}">
+                                <button name="action_bcv_update_now" type="object" string="Update now"
+                                        class="btn-link" icon="fa-refresh"/>
+                                <button name="%(l10n_ve_bcv_rate.action_bcv_rate_backfill)d" type="action"
+                                        string="Load history" class="btn-link" icon="fa-history"/>
+                            </div>
+                            <div class="mt8 text-muted small">
+                                Source: Banco Central de Venezuela, via <a href="https://bcv.today" target="_blank">BCV Today</a> (data CC BY 4.0). Unofficial service, not affiliated with the BCV.
+                            </div>
                         </div>
                     </div>
-                </setting>
+                </div>
             </xpath>
         </field>
     </record>
